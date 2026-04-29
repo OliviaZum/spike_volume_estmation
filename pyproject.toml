@@ -1,0 +1,94 @@
+[tool.poetry]
+name = "wheat-volume-estimation"
+version = "0.2.0"
+description = "Predict wheat volume from images."
+authors = ["Nico Graf <ncograf@gmail.com>", "Olivia Zumsteg <zumstego@ethz.ch"]
+readme = "README.md"
+packages = [
+    {include = "*", from = "src"},
+    {include = "*", from = "scripts"}
+    ]
+
+[tool.poetry.group.preprocessing]
+optional = true
+
+[tool.poetry.dependencies]
+python = "~3.10"
+numpy = ">=1.26,<2.0"
+pandas = "^2.1.1"
+matplotlib = "^3.8.0"
+torch = {version = "^2.1.0", source = "torch"}
+torchvision = {version = "^0.16.0", source = "torch"}
+pytorch-lightning = "^2.0.9.post0"
+lightning = "^2.0.9.post0"
+opencv-python = "^4.8.1.78"
+timm = ">=1.0.3"
+accelerate = "^0.29.0"
+scikit-learn = ">=0.21"
+pillow = ">=8.2.0"
+pyyaml = ">=5.4.1"
+pyquaternion = "^0.9.9"
+addict = "^2.4.0"
+tqdm = "^4.66.1"
+scikit-image = "^0.22.0"
+regex = ">=2023.12,<2024.0"
+tueplots = "^0.0.12"
+wandb = "^0.16.3"
+plotly = "^5.18.0"
+pyarrow = "^15.0.0"
+coverage = "^7.4.1"
+ruff = "^0.4.0"
+icecream = "^2.1.3"
+open3d = "^0.17.0"
+opencv-contrib-python = "^4.11.0.86"
+segment-anything = {path = "data/segment-anything", develop = true}
+transformers = "4.52.4"
+pymeshlab = "^2023.12.post3"
+vtk = "^9.4.2"
+openpyxl = "^3.1.5"
+packaging = "<25"
+huggingface-hub = "<1.0"
+requests = "<2.33"
+opencv-python-headless = "4.8.1.78"
+opencv-contrib-python-headless = "4.8.1.78"
+
+[tool.poetry.group.preprocessing.dependencies]
+vtk = "^9.3.0"
+pymeshlab = "^2023.12"
+deepfill-pytorch = {git = "https://github.com/ncograf/deepfillv2-pytorch.git"}
+tripy = "^1.0.0"
+diffusers = "^0.24.0"
+transformers = "^4.34.1"
+
+[tool.poetry.scripts]
+gen-dataset = "preprocessing.generate_dataset:main"
+gen-dataset-lrm = "preprocessing.generate_dataset:open_lrm"
+rm-bars = "preprocessing.remove_bars:main"
+gen-base = "preprocessing.generate_baseline:main"
+cut-spikes = "preprocessing.process_ply_files:process_ply_files_in_root_directory"
+flat-scans = "preprocessing.process_ply_files:flatten_ply_scans"
+rm-invalid-vol = "preprocessing.remove_invalid_mappings:main"
+merge-datasets = "preprocessing.generate_dataset:merge_datasets"
+gen-dataset-vol = "preprocessing.generate_dataset:generate_dataset_volumes"
+crop-images = "preprocessing.crop_images:main"
+area-baseline = "plotting.area_baseline:main"
+metrics-baseline = "plotting.metrics_baseline:main"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+icecream = "^2.1.3"
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::UserWarning",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

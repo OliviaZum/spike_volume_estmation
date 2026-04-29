@@ -1,0 +1,41 @@
+# All files and folders not to be tracked go in here
+
+# folders
+__pycache__
+.env
+.idea
+.venv
+build
+build_preview
+data
+env/
+venv/
+wandb
+
+# files
+.python-version
+.coverage
+coverage*
+htmlcov*
+FoMo4Wheat_base.pth
+# specials
+**/latex/*.pdf
+
+# postfix
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.tdo
+*.run.xml
+
+# subprojects
+deepfillv2-pytorch
+OpenLRM

@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "main_training.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main_training.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset-path",
+                "/home/zumstego/wheat_volume_estimation/code/data/mixed_dataset_black",
+                "--output-path",
+                "data/mlp_low_learningrate_mixed_dataset_new5",
+                "--mapping-file",
+                "/home/zumstego/wheat_volume_estimation/code/data/mixed_dataset_black/vol_mapping.csv",
+                //"WANDB_MODE", "offline",
+            ], 
+            "env": {"WANDB_MODE": "offline"}
+        }
+    ]
+}
