@@ -75,17 +75,20 @@
 <body>
 <div class="container">
 
-    <h1>Non-Destructive Wheat Spike Volume Estimation from RGB Images</h1>
+    <h1>Fine-Tuned Vision Transformers Capture Complex Wheat Spike Morphology for Volume Estimation from RGB Images</h1>
 
     <div class="authors">
-        Olivia Zumsteg<sup>1</sup>, Nico Graf<sup>1</sup>, Aaron Häusler<sup>1</sup>, 
+        Olivia Zumsteg<sup>1</sup>, Nico Graf<sup>2</sup>, Aaron Häusler<sup>3</sup>, 
         Norbert Kirchgessner<sup>1</sup>, Nicola Storni<sup>1</sup><br>
         Andreas Hund<sup>1</sup>, Lukas Roth<sup>1</sup>
     </div>
 
     <div class="affiliation">
-        <sup>1</sup>ETH Zurich, Switzerland
-    </div>
+        <sup>1</sup>ETH Zurich, Institute of Agricultural Science, Universitätsstrasse 2, Zurich, 8092, Switzerland
+        <sup>2</sup>ETH Zurich, Department of Computer Science, Universitätsstrasse 6, Zurich, 8902, Switzerland
+        <sup>3</sup>ETH Zurich, Department of Mechanical and Process Engineering, Leonhardstrasse 21, Zurich, 8092, Switzerland
+        
+     </div>
 
     <div class="buttons">
         <a href="#">📄 Paper</a>
@@ -103,10 +106,31 @@
         <h2>Abstract</h2>
         <div class="underline"></div>
         <p>
-            This project presents an image-based approach for non-destructive wheat spike volume estimation.
-            RGB images are used to predict spike volume, with structured-light 3D scans serving as ground truth.
-            The goal is to provide an efficient and scalable alternative to manual or destructive measurements,
-            enabling high-throughput phenotyping of wheat spikes.
+            Estimating three-dimensional morphological traits such as volume from two-
+            dimensional RGB images presents inherent challenges due to the loss of depth
+            information, projection distortions, and occlusions under field conditions. In
+            this work, we explore multiple approaches for non-destructive volume esti-
+            mation of wheat spikes using RGB images and structured-light 3D scans as
+            ground truth references. Wheat spike volume is promising for phenotyping
+            as it shows a high correlation with spike dry weight, a key component of
+            fruiting efficiency. We define the total spike volume per unit area of a wheat
+            canopy at flowering as fruiting capacity. Accounting for the complex geome-
+            try of the spikes, we compare different neural network approaches for volume
+            estimation from 2D images and benchmark them against two conventional
+            baselines: a 2D area-based projection and a geometric reconstruction using
+            axis-aligned cross-sections. Fine-tuned Vision Transformers (DINOv2 and
+            DINOv3) with MLPs achieve the lowest MAPE of 5.08% and 4.67%, and the
+            highest correlation of 0.96 and 0.97 on six-view indoor images, outperform-
+            ing fine-tuned CNNs (ResNet18 and ResNet50), a wheat-specific backbone,
+            and both baselines. When using frozen DINO backbones, deep-supervised LSTMs 
+            outperform MLPs, whereas after fine-tuning, improved high-level
+            representations allow simple MLPs to outperform LSTMs. We demonstrate
+            that object shape significantly impacts volume estimation accuracy, with
+            irregular geometries such as wheat spikes posing greater challenges for geo-
+            metric methods than for deep learning approaches. Fine-tuning DINOv3 on
+            field-based single side-view images yields a MAPE of 8.39% and a correlation
+            of 0.90, providing a novel pipeline and a fast, accurate, and non-destructive
+            approach for wheat spike volume phenotyping.
         </p>
     </div>
 
