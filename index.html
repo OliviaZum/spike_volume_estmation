@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Spike Volume Estimation</title>
+    <meta charset="utf-8">
+    <title>Spike Volume Estimation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .authors {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .affiliation {
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background: #1f3b57;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .buttons a:hover {
+            background: #2c5d87;
+        }
+        img {
+            margin-top: 30px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .abstract-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .abstract-section h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff7eb3, #7afcff);
+            margin: 10px auto 20px auto;
+            border-radius: 2px;
+        }
+        .abstract-section p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #5a6b7d;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Spike Volume Estimation</h1>
-  <p>Project page coming soon.</p>
+<div class="container">
+
+    <h1>Non-Destructive Wheat Spike Volume Estimation from RGB Images</h1>
+
+    <div class="authors">
+        Olivia Zumsteg<sup>1</sup>, Nico Graf<sup>1</sup>, Aaron Häusler<sup>1</sup>, 
+        Norbert Kirchgessner<sup>1</sup>, Nicola Storni<sup>1</sup><br>
+        Andreas Hund<sup>1</sup>, Lukas Roth<sup>1</sup>
+    </div>
+
+    <div class="affiliation">
+        <sup>1</sup>ETH Zurich, Switzerland
+    </div>
+
+    <div class="buttons">
+        <a href="#">📄 Paper</a>
+        <a href="https://github.com/OliviaZum/spike_volume_estmation">💻 Code</a>
+        <a href="https://huggingface.co/spaces/olzumst/volume_prediction">🌾 Demo</a>
+        <a href="http://hdl.handle.net/20.500.11850/741307">📦 Dataset</a>
+    </div>
+
+    <img src="teaser.png" alt="Wheat spike volume estimation overview">
+
+    <div class="abstract-section">
+        <h2>Abstract</h2>
+        <div class="underline"></div>
+        <p>
+            This project presents an image-based approach for non-destructive wheat spike volume estimation.
+            RGB images are used to predict spike volume, with structured-light 3D scans serving as ground truth.
+            The goal is to provide an efficient and scalable alternative to manual or destructive measurements,
+            enabling high-throughput phenotyping of wheat spikes.
+        </p>
+    </div>
+
+</div>
 </body>
 </html>
