@@ -246,7 +246,7 @@ def evaluation(dataset_path : Path | str,
     
     ax.grid(True)
     
-    plt.savefig(f'data/5_trans_dinov3_6imgs_loss_seq_to_seq/results/plot_best_{model_name}_6_imgslarger.png', dpi=1800)
+    plt.savefig(f'data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/results/plot_best_{model_name}_cpu_imgslarger.png', dpi=1800)
     plt.show()
 
    
@@ -255,12 +255,12 @@ model_transform = [v2.Resize(size=256, antialias=True),
                        v2.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])]
 
 #input parameters 
-eval_max_sequence_len = 6
-eval_min_sequence_len = 6
+eval_max_sequence_len = 1
+eval_min_sequence_len = 1
 eval_random_sequence_len = False
 eval_random_choice = False
 
-pretrain = "dinov3" #resnet18 / #dinov3 /"none" / "feature"
+pretrain = "None" #resnet18 / #dinov3 /"none" / "feature"
 
 if pretrain == "dinov2": 
     pretrained_model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14") 
@@ -281,18 +281,18 @@ experiment_creator = MultiImageExperimentCreator(ignore_artificial=True,
                                                              random_choice=eval_random_choice)
 #dataset_path="/projects/zumstego/1_datasets/images_no_bar_crop"
 #dataset_path="/projects/zumstego/1_datasets/field_images_no_bar_crop"
-evaluation(dataset_path="/projects/zumstego/1_datasets/images_no_bar_crop",
+evaluation(dataset_path="/projects/zumstego/1_datasets/field_images_no_bar_crop",
                         pretrained_transform=model_transform, 
-                        output_path="data/5_trans_dinov3_6imgs_loss_seq_to_seq/results", #adapt
-                        mapping_file="/projects/zumstego/1_datasets/images_no_bar_crop/vol_mapping.csv",
-                        #mapping_file="/projects/zumstego/1_datasets/field_cropped/vol_mapping.csv",
+                        output_path="data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/results", #adapt
+                        #mapping_file="/projects/zumstego/1_datasets/images_no_bar_crop/vol_mapping.csv",
+                        mapping_file="/projects/zumstego/1_datasets/field_cropped/vol_mapping.csv",
                         value_column="volume",
-                        Y_STD = 1235.42, 
-                        Y_MEAN = 4769.53,
-                        #Y_MEAN = 4714, #field images fine tuned
-                        #Y_STD = 1111, #field images fine tuned
-                        max_sequence_length=6,  #ADAPT
-                        model = "data/5_trans_dinov3_6imgs_loss_seq_to_seq/model_12.pth", #adapt
+                        #Y_STD = 1235.42, 
+                        #Y_MEAN = 4769.53,
+                        Y_MEAN = 4714, #field images fine tuned
+                        Y_STD = 1111, #field images fine tuned
+                        max_sequence_length=1,  #ADAPT
+                        model = "data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/model_6.pth", #adapt
                         pretrained_model=pretrained_model,
                         experiment_creator=experiment_creator,
                         verbose=False)

@@ -282,7 +282,7 @@ class AttentionBased(nn.Module):
     
 
 
-class fine_tuning(nn.Module):
+class fine_tuning_notused(nn.Module):
     def __init__(self, backbone_name="resnet18", pretrained=True, out_dim=128):
         super().__init__()
 
@@ -413,7 +413,7 @@ class fine_tuning(nn.Module):
 
 
 
-class fine_tuning_notused(nn.Module):
+class fine_tuning(nn.Module):
     def __init__(self, backbone_name="resnet18", pretrained=True, out_dim=128):
         super().__init__()
 
@@ -532,4 +532,4 @@ class fine_tuning_notused(nn.Module):
         return self.mlp(feats, mask)
     
 
-#CNN = fine_tuning
+CNN = fine_tuning

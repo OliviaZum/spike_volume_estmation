@@ -52,7 +52,11 @@ class Inferrer(SeedSetter):
             self.device = torch.device("cpu")
             if verbose:
                 print("Compute with CPU")
-            
+
+        #self.device = torch.device("cpu")
+        #if verbose:
+        #    print("Compute with CPU")
+                    
 
         self.model, _ = Saver.load_model(self.saved_model_path)
         self.model = self.model.to(self.device)
