@@ -18,8 +18,9 @@ The dateset consists of images and scans of about 1700 wheat spikes. To gain mor
 ## Installation and setup
 
 Make sure to download and install the necessary files:
-- download [deepfill_model](https://drive.google.com/u/0/uc?id=1L63oBNVgz7xSb_3hGbUdkYW1IuRgMkCa&export=download) and copy the `.pth` file to the folder `code/data/models/deepfill/`
-- download segment anything weights: [ViT-H SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth). They have to be placed in `data/models/segment_anything/sam_vit_h_4b8939.pth`
+- download [deepfill_model](https://drive.google.com/u/0/uc?id=1L63oBNVgz7xSb_3hGbUdkYW1IuRgMkCa&export=download) and move the `.pth` file to the folder `code/data/models/deepfill/`. It should be called `states_pt_places2.pth`.
+- download segment anything weights: [ViT-H SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth). They have to be placed in `data/models/segment_anything/sam_vit_h_4b8939.pth`.
+- download [FoMo4Wheat](https://github.com/PheniX-Lab/FoMo4Wheat) and place it in `data/models/backbone`. It should be names `FoMo4Wheat_base.pth`. Adapt the path in neural_nets.py if you use a different model.
 
 ## Scripts
 

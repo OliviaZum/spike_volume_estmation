@@ -34,13 +34,13 @@ def volume_estimation(dataset_path: str | Path, output_path: str | Path, mapping
   
     # ------------------- Fine-Tuning -------------------------
     # resnet18 /resnet50 / dinov2_vits14 / vit_small_patch16_dinov3 / fomo4wheat_base
-    backbone_fine_tuning = "resnet50"
+    backbone_fine_tuning = "vit_small_patch16_dinov3"
 
     # ------------------- Vision Model without fine-tuning -------------------------
     pre_train = "dinov3" #resnet18 / dinov2 / dinov3
 
     # ----------------------------------------------------------
-    model_type = "Transformer" # "LSTM" / "CNN" / "Transformer" / "MLP" / fine_tuning
+    model_type = "fine_tuning" # "LSTM" / "CNN" / "Transformer" / "MLP" / fine_tuning
     #Go to neural_nets.py and make sure that the correct model is called fine_tuning, and not fine_tuning_notused
     print(model_type)
 
@@ -295,7 +295,7 @@ def volume_estimation(dataset_path: str | Path, output_path: str | Path, mapping
         training.train_run(
             dataset_path=dataset_path,
             pretrained_transform=model_transform, 
-            output_path=Path(output_path) / f"cnn_run_{cnt}",
+            output_path=Path(output_path) / f"ft_run_{cnt}",
             mapping_file=mapping_file,
             value_column=value_column,
             random_split_generator=random_split_generator,
@@ -465,22 +465,6 @@ def volume_estimation(dataset_path: str | Path, output_path: str | Path, mapping
        
 
 
-
-
-       
-
-       
-        
-      
-
-
-            
-
-
-
-
-
-    
 
 @click.command()
 @click.option("--dataset-path", type=str, required=True, help="Path to the dataset, required to contain the images and a mapping file.")

@@ -15,6 +15,7 @@ import time
 import torchvision.models as models
 import torch.nn as nn
 import timm
+import shutil
 
 def evaluation(dataset_path : Path | str,
               pretrained_transform : list,
@@ -57,6 +58,14 @@ def evaluation(dataset_path : Path | str,
     save_mapping_val = output_path / "mapping_val.json"
     save_mapping_test = output_path / "mapping_test.json"
     save_predictions_path = output_path / "predictions.json"
+
+    #copy json files into results folder
+    for filename in ["mapping_all_plants.json","mapping_train.json","mapping_val.json","mapping_test.json","predictions.json",]:
+        src = output_path.parent / filename
+        dst = output_path / filename
+
+        if src.exists():
+            shutil.move(str(src), str(dst))
 
     # create / get experiment
     plant_mapping = pd.read_json(save_mapping_plants, orient='index', convert_axes=False)
@@ -246,7 +255,7 @@ def evaluation(dataset_path : Path | str,
     
     ax.grid(True)
     
-    plt.savefig(f'data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/results/plot_best_{model_name}_cpu_imgslarger.png', dpi=1800)
+    plt.savefig(f'data/test_dexample_folderelete/ft_run_0/results/plot_{model_name}_example.png', dpi=1800)
     plt.show()
 
    
@@ -271,7 +280,7 @@ elif pretrain == "dinov3":
     pretrained_model = timm.create_model("vit_small_patch16_dinov3",pretrained=True,num_classes=0)
 elif pretrain == "None": 
     pretrained_model = None
-    print("Using no pretrained model (CNN evaluation)")
+    print("Using no pretrained model (Fine-tuned evaluation)")
 
 
 experiment_creator = MultiImageExperimentCreator(ignore_artificial=True, 
@@ -281,18 +290,18 @@ experiment_creator = MultiImageExperimentCreator(ignore_artificial=True,
                                                              random_choice=eval_random_choice)
 #dataset_path="/projects/zumstego/1_datasets/images_no_bar_crop"
 #dataset_path="/projects/zumstego/1_datasets/field_images_no_bar_crop"
-evaluation(dataset_path="/projects/zumstego/1_datasets/field_images_no_bar_crop",
+evaluation(dataset_path="/projects/zumstego/1_datasets/images_no_bar_crop",
                         pretrained_transform=model_transform, 
-                        output_path="data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/results", #adapt
-                        #mapping_file="/projects/zumstego/1_datasets/images_no_bar_crop/vol_mapping.csv",
-                        mapping_file="/projects/zumstego/1_datasets/field_cropped/vol_mapping.csv",
+                        output_path="data/example_folder/ft_run_0/results", #adapt
+                        mapping_file="/projects/zumstego/1_datasets/images_no_bar_crop/vol_mapping.csv",
+                        #mapping_file="/projects/zumstego/1_datasets/field_cropped/vol_mapping.csv",
                         value_column="volume",
-                        #Y_STD = 1235.42, 
-                        #Y_MEAN = 4769.53,
-                        Y_MEAN = 4714, #field images fine tuned
-                        Y_STD = 1111, #field images fine tuned
+                        Y_STD = 1235.42, 
+                        Y_MEAN = 4769.53,
+                        #Y_MEAN = 4714, #field images fine tuned
+                        #Y_STD = 1111, #field images fine tuned
                         max_sequence_length=1,  #ADAPT
-                        model = "data/1_a_field_fine_tuned_mlp_dinov3 copy/cnn_run_0/model_6.pth", #adapt
+                        model = "data/example_folder/ft_run_0/model_0.pth", #adapt
                         pretrained_model=pretrained_model,
                         experiment_creator=experiment_creator,
                         verbose=False)

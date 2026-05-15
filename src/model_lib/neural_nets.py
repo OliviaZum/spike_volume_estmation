@@ -315,7 +315,7 @@ class fine_tuning_notused(nn.Module):
                 "dinov2_vitb14"
             )
 
-            ckpt = torch.load("FoMo4Wheat_base.pth", map_location="cpu")
+            ckpt = torch.load("data/models/backbone/FoMo4Wheat_base.pth", map_location="cpu")
 
             # FoMo checkpoint is a full model → extract weights
             backbone.load_state_dict(ckpt.state_dict(), strict=False)
@@ -446,7 +446,7 @@ class fine_tuning(nn.Module):
                 "dinov2_vitb14"
             )
 
-            ckpt = torch.load("FoMo4Wheat_base.pth", map_location="cpu")
+            ckpt = torch.load("data/models/backbone/FoMo4Wheat_base.pth", map_location="cpu")
 
             # FoMo checkpoint is a full model → extract weights
             backbone.load_state_dict(ckpt.state_dict(), strict=False)
@@ -532,4 +532,4 @@ class fine_tuning(nn.Module):
         return self.mlp(feats, mask)
     
 
-CNN = fine_tuning
+#CNN = fine_tuning
