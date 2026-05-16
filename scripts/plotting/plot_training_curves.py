@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 #with open("data/3_trans_dinov2_1imgs_loss_seq_to_one/training_losses.json") as f:
 
 
-
 #new
 
 #with open("data/3_lstm_dinov2_1imgs_loss/mlp_run_0/training_losses.json") as f:

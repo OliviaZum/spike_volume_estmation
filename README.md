@@ -114,4 +114,36 @@ Each dataset is a directory with images and a vol_mapping.csv file
 merge-dataset --dataset-1 data/dataset1 --dataset-2 data/dataset2 --output-dataset data/output_dataset
 ```
 
+## Estimate Spike Volume 
 
+#### Area Baseline
+
+This script creates an area-based baseline for spike volume prediction. It reads segmentation masks stored as .npz files, counts the number of foreground pixels for each image, and uses the average foreground area across a fixed number of images per plant as a simple prediction feature. It filters out failed segmentations based on very small or very large foreground areas. The script then keeps only plants that are present in the train or test mapping files, saves CSV files with area and volume values, and creates a histogram of the foreground-pixel distribution.
+
+Run the file
+
+```
+area-baseline --input '/path/to/dataset/baseline_jpg_ply_npz_without_stalk' --output 'data/output_baseline' --mapping_test 'data/path/to/mapping_test.json' --mapping_train 'data/path/to/mapping_train.json' --num_imgs 4
+
+```
+
+#### Geometric Baseline
+
+This script evaluates the baseline volume predictions. It can evaluate either the area baseline or the geometric baseline, depending on the --geom argument. It fits calibration functions on the training set, especially a quadratic mapping from baseline prediction to true volume, and applies this calibration to the test set. It then reports R², correlation, MAPE, and MAE, and saves plots comparing predicted and true spike volumes, including coloring by sampling date.
+
+Run the file
+
+```
+metrics-baseline --output_area 'data/output_baseline' --input_geom '/path/to/dataset/baseline_jpg_ply_npz_with_stalk' --output_geom "data/output_geometric" --mapping_train 'data/path/to/mapping_train.json' --num_imgs 4 --geom True 
+```
+
+#### Neural Networks
+
+Adapt main_training.py as described in the file and start training with 
+
+```
+poetry run accelerate launch --config_file single_gpu.yaml scripts/main_training.py --dataset-path /path/to/dataset/images_no_bar_crop --output-path data/folder_name --mapping-file /path/to/dataset/images_no_bar_crop/vol_mapping.csv 
+
+```
+
+Adapt evaluation.py to evaluate a specific model. 
