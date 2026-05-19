@@ -180,12 +180,18 @@
 
         .method-group {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
         }
 
         .method-group .image-card {
             margin-bottom: 18px;
+        }
+        .method-images {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .method-img1 {
@@ -333,38 +339,43 @@
                 </figure>
             </div>
 
-                <h3>Methods</h3>
 
-        <div class="methods-row">
-            <div class="method-group">
-                <h4>Baselines</h4>
+        <h3>Methods</h3>
 
-                <figure class="image-card">
-                    <img class="method-img1" src="3d_rev.png" alt="Baseline method 1">
-                    <figcaption>
-                        Caption for the first baseline.
-                    </figcaption>
-                </figure>
+            <div class="methods-row">
+                <div class="method-group">
+                    <h4>Baselines</h4>
 
-                <figure class="image-card">
-                    <img class="method-img2" src="mask_rev.png" alt="Baseline method 2">
-                    <figcaption>
-                        Caption for the second baseline.
-                    </figcaption>
-                </figure>
+                    <div class="method-images">
+                        <figure class="image-card">
+                            <img class="method-img1" src="3d_rev.png" alt="Baseline method 1">
+                            <figcaption>
+                                Caption for the first baseline.
+                            </figcaption>
+                        </figure>
+
+                        <figure class="image-card">
+                            <img class="method-img2" src="mask_rev.png" alt="Baseline method 2">
+                            <figcaption>
+                                Caption for the second baseline.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="method-group">
+                    <h4>Neural Networks</h4>
+
+                    <div class="method-images">
+                        <figure class="image-card">
+                            <img class="method-img3" src="example_training_curve.png" alt="Neural network method">
+                            <figcaption>
+                                Caption for the neural network method.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
-
-            <div class="method-group">
-                <h4>Neural Networks</h4>
-
-                <figure class="image-card">
-                    <img class="method-img3" src="example_training_curve.png" alt="Neural network method">
-                    <figcaption>
-                        Caption for the neural network method.
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
 
 
 
