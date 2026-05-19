@@ -122,12 +122,37 @@
             margin-top: 25px;
         }
 
+        .img1 {
+            width: 180px;
+        }
+
+        .img2 {
+            width: 240px;
+        }
+
+        .img3 {
+            width: 200px;
+        }
+        .img1 + figcaption {
+            width: 180px;
+        }
+
+        .img2 + figcaption {
+            width: 240px;
+        }
+
+        .img3 + figcaption {
+            width: 200px;
+        }
+
         .image-card {
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .image-card img {
-            width: 100%;
             margin-top: 0;
             border-radius: 10px;
         }
@@ -238,21 +263,21 @@
 
         <div class="image-row">
             <figure class="image-card">
-                <img src="5_10_10_rev.jpg" alt="Ground truth data image 1">
+                <img class="img1" src="5_10_10_rev.jpg" alt="Ground truth data image 1">
                 <figcaption>
                     Spike image acquired indoors after potential awn removal.
                 </figcaption>
             </figure>
 
             <figure class="image-card">
-                <img src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
+                <img class="img2" src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
                 <figcaption>
                     3D point cloud from SLS (Structured Light Scanning) of a spike used to extract ground truth volume.
                 </figcaption>
             </figure>
 
             <figure class="image-card">
-                <img src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
+                <img class="img3" src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
                 <figcaption>
                     Spike image acquired outdoors in the field without awn removal.
                 </figcaption>
