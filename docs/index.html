@@ -115,30 +115,6 @@
             color: #1f3b57;
         }
 
-        .image-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 25px;
-        }
-        .img1 {
-            width: 120px;
-        }
-        .img2 {
-            width: 200px;
-        }
-        .img3 {
-            width: 140px;
-        }
-        .img1 + figcaption {
-            width: 180px;
-        }
-        .img2 + figcaption {
-            width: 240px;
-        }
-        .img3 + figcaption {
-            width: 200px;
-        }
         .image-card {
             margin: 0;
             display: flex;
@@ -157,12 +133,6 @@
             line-height: 1.4;
         }
 
-        @media (max-width: 750px) {
-            .image-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .highlights-section h4 {
             font-size: 18px;
             margin-top: 15px;
@@ -170,60 +140,7 @@
             color: #1f3b57;
         }
 
-        .methods-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 18px;
-            margin-top: 25px;
-            align-items: start;
-        }
-
-        .method-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .method-group .image-card {
-            margin-bottom: 18px;
-        }
-        .method-images {
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .method-img1 {
-            width: 150px;
-        }
-
-        .method-img2 {
-            width: 100px;
-        }
-
-        .method-img3 {
-            width: 260px;
-        }
-
-        .method-img1 + figcaption {
-            width: 220px;
-        }
-
-        .method-img2 + figcaption {
-            width: 220px;
-        }
-
-        .method-img3 + figcaption {
-            width: 260px;
-        }
-
-        @media (max-width: 750px) {
-            .methods-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        
         .result-images {
             display: flex;
             gap: 18px;
@@ -333,7 +250,12 @@
         <figure>
             <img src="overview.png" alt="Overview of the spike volume estimation pipeline">
             <figcaption>
-                Overview of the proposed pipeline for estimating wheat spike volume from RGB images.
+                Overview of the proposed pipeline for estimating wheat spike volume from RGB images. Spike RGB images were acquired
+                indoors and outdoors in the field with a smartphone. 3D point clouds from a structured light scanner were used to extract
+                ground truth volume. The area baseline analyzed the correlation between the number of pixels belonging to the spike
+                and the ground truth volume. The geometric baseline treated the spike as a series of stacked discs with varying 
+                radii. The neural networks predicted volume directly from images, after extracting intermediate image embeddings
+                from large pretrained backbone models. 
             </figcaption>
         </figure>
     </div>
@@ -342,74 +264,7 @@
         <h2>Highlights</h2>
         <div class="underline"></div>
 
-        <h3>Ground truth data</h3>
-
-            <div class="image-row">
-                <figure class="image-card">
-                    <img class="img1" src="5_10_10_rev.jpg" alt="Ground truth data image 1">
-                    <figcaption>
-                        Spike image acquired indoors after potential awn removal.
-                    </figcaption>
-                </figure>
-
-                <figure class="image-card">
-                    <img class="img2" src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
-                    <figcaption>
-                        3D point cloud from SLS (Structured Light Scanning) of a spike used to extract ground truth volume.
-                    </figcaption>
-                </figure>
-
-                <figure class="image-card">
-                    <img class="img3" src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
-                    <figcaption>
-                        Spike image acquired outdoors in the field without awn removal.
-                    </figcaption>
-                </figure>
-            </div>
-
-
-        <h3>Methods</h3>
-
-            <div class="methods-row">
-                <div class="method-group">
-                    <h4>Baselines</h4>
-
-                    <div class="method-images">
-                        <figure class="image-card">
-                            <img class="method-img1" src="3d_rev.png" alt="Baseline method 1">
-                            <figcaption>
-                                Caption for the first baseline.
-                            </figcaption>
-                        </figure>
-
-                        <figure class="image-card">
-                            <img class="method-img2" src="mask_rev.png" alt="Baseline method 2">
-                            <figcaption>
-                                Caption for the second baseline.
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="method-group">
-                    <h4>Neural Networks</h4>
-
-                    <div class="method-images">
-                        <figure class="image-card">
-                            <img class="method-img3" src="example_training_curve.png" alt="Neural network method">
-                            <figcaption>
-                                Caption for the neural network method.
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
+    
 
         <h3>Results</h3>
 
