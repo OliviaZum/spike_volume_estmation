@@ -163,6 +163,61 @@
             }
         }
 
+        .highlights-section h4 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            color: #1f3b57;
+        }
+
+        .methods-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 18px;
+            margin-top: 25px;
+            align-items: start;
+        }
+
+        .method-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .method-group .image-card {
+            margin-bottom: 18px;
+        }
+
+        .method-img1 {
+            width: 220px;
+        }
+
+        .method-img2 {
+            width: 220px;
+        }
+
+        .method-img3 {
+            width: 260px;
+        }
+
+        .method-img1 + figcaption {
+            width: 220px;
+        }
+
+        .method-img2 + figcaption {
+            width: 220px;
+        }
+
+        .method-img3 + figcaption {
+            width: 260px;
+        }
+
+        @media (max-width: 750px) {
+            .methods-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
 
 
@@ -255,28 +310,67 @@
 
         <h3>Ground truth data</h3>
 
-        <div class="image-row">
-            <figure class="image-card">
-                <img class="img1" src="5_10_10_rev.jpg" alt="Ground truth data image 1">
-                <figcaption>
-                    Spike image acquired indoors after potential awn removal.
-                </figcaption>
-            </figure>
+            <div class="image-row">
+                <figure class="image-card">
+                    <img class="img1" src="5_10_10_rev.jpg" alt="Ground truth data image 1">
+                    <figcaption>
+                        Spike image acquired indoors after potential awn removal.
+                    </figcaption>
+                </figure>
 
-            <figure class="image-card">
-                <img class="img2" src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
-                <figcaption>
-                    3D point cloud from SLS (Structured Light Scanning) of a spike used to extract ground truth volume.
-                </figcaption>
-            </figure>
+                <figure class="image-card">
+                    <img class="img2" src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
+                    <figcaption>
+                        3D point cloud from SLS (Structured Light Scanning) of a spike used to extract ground truth volume.
+                    </figcaption>
+                </figure>
 
-            <figure class="image-card">
-                <img class="img3" src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
-                <figcaption>
-                    Spike image acquired outdoors in the field without awn removal.
-                </figcaption>
-            </figure>
+                <figure class="image-card">
+                    <img class="img3" src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
+                    <figcaption>
+                        Spike image acquired outdoors in the field without awn removal.
+                    </figcaption>
+                </figure>
+            </div>
+
+                <h3>Methods</h3>
+
+        <div class="methods-row">
+            <div class="method-group">
+                <h4>Baselines</h4>
+
+                <figure class="image-card">
+                    <img class="method-img1" src="3d_rev.png" alt="Baseline method 1">
+                    <figcaption>
+                        Caption for the first baseline.
+                    </figcaption>
+                </figure>
+
+                <figure class="image-card">
+                    <img class="method-img2" src="mask_rev.png" alt="Baseline method 2">
+                    <figcaption>
+                        Caption for the second baseline.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="method-group">
+                <h4>Neural Networks</h4>
+
+                <figure class="image-card">
+                    <img class="method-img3" src="example_training_curve.png" alt="Neural network method">
+                    <figcaption>
+                        Caption for the neural network method.
+                    </figcaption>
+                </figure>
+            </div>
         </div>
+
+
+
+
+
+
     </div>
 
 </div>
