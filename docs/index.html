@@ -99,6 +99,54 @@
             color: #5a6b7d;
             line-height: 1.5;
         }
+        .highlights-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .highlights-section h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .highlights-section h3 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #1f3b57;
+        }
+
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .image-card {
+            margin: 0;
+        }
+
+        .image-card img {
+            width: 100%;
+            margin-top: 0;
+            border-radius: 10px;
+        }
+
+        .image-card figcaption {
+            font-size: 15px;
+            color: #5a6b7d;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 750px) {
+            .image-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+
     </style>
 </head>
 
@@ -180,6 +228,36 @@
                 Overview of the proposed pipeline for estimating wheat spike volume from RGB images.
             </figcaption>
         </figure>
+    </div>
+
+    <div class="highlights-section">
+        <h2>Highlights</h2>
+        <div class="underline"></div>
+
+        <h3>Ground truth data</h3>
+
+        <div class="image-row">
+            <figure class="image-card">
+                <img src="5_10_10_rev.jpg" alt="Ground truth data image 1">
+                <figcaption>
+                    Spike image acquired indoors after potential awn removal.
+                </figcaption>
+            </figure>
+
+            <figure class="image-card">
+                <img src="ply_no_cone_rotated_rev.png" alt="Ground truth data image 2">
+                <figcaption>
+                    3D point cloud from SLS (Structured Light Scanning) of a spike used to extract ground truth volume.
+                </figcaption>
+            </figure>
+
+            <figure class="image-card">
+                <img src="2_6_5_1_field_image_rev.jpg" alt="Ground truth data image 3">
+                <figcaption>
+                    Spike image acquired outdoors in the field without awn removal.
+                </figcaption>
+            </figure>
+        </div>
     </div>
 
 </div>
