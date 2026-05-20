@@ -195,7 +195,7 @@
         }
 
         .baseline-result-text {
-            max-width: 600px;
+            max-width: 620px;
             text-align: left;
             font-size: 17px;
             line-height: 1.6;
@@ -347,7 +347,12 @@
                             </figcaption>
 
                             <p class="figure-extra-text">
-                                Write your additional explanation here.
+                                Among the neural networks with a fine-tuned backbone, DINOv3 outperformed DINOv2 in most cases. One possible explanation for this pattern is that DINOv3 introduces architectural and training changes designed to excel
+                                at high-level semantic representation learning. hese improvements do not necessarily translate into better performance in fine-grained geometric
+                                estimation tasks, such as estimating spike volume when the backbone is fully frozen. However, once fine-tuned, the greater representational capacity of DINOv3
+                                enabled more effective adaptation to task-specific requirements, resulting in superior performance. While ResNet50 generally outperformed ResNet18, both the CNN and the FoMo4Wheat backbones
+                                remained inferior to the fine-tuned DINOv2 and DINOv3 models. The fine-tuned DINOv3-MLP model evaluated on six images achieved the best performance.
+                                As expected, the estimation error decreased with an increasing number of evaluation images. After backbone fine-tuning, MLPs outperformed the LSTMs. 
                             </p>
                         </figure>
 
@@ -365,7 +370,10 @@
                             </figcaption>
 
                             <p class="figure-extra-text">
-                                Write your additional explanation here.
+                                Although all methods showed improvements with more evaluation images, the performance gains of the baseline methods began to level off beyond two images. 
+                                Across all extreme spike groups, the neural network showed the narrowest interquartile ranges, reflecting reduced error ranges
+                                and improved estimation stability compared to the baseline models 
+
                             </p>
                         </figure>
 
@@ -400,7 +408,10 @@
                 </div>
 
                 <p class="figure-extra-text">
-                    Write your explanation of the field image results here.
+                    We further focused on single side-view volume estmation, where awns, if present, were not removed before imaging.
+                    Fine-tuning these best-performing single side-view models on field-based images resulted in higher estimation accuracies compared to the same single-view models without fine-tuning on
+                    field images. After fine-tuning, the models focused more on the spike body while assigning less attention to awns and background
+                    artefacts caused by varying lighting conditions.
                 </p>
         </div>
 
