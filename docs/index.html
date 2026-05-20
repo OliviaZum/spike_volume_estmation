@@ -316,7 +316,14 @@
 
                         <div class="baseline-result-text">
                             <p>
-                                Write your explanation of the baseline results here.
+                                We evaluated our deep learning models against two conventional baseines, 
+                                the 2D area-based method and a geometric model assuming cylindrical cross-sections. Among the baselines, 
+                                the area baseline consistently outperformed the geometric baseline across all image counts. A key limitation of the area 
+                                baseline is that it treated all pixels equally, ignoring that spike volume scales linearly with length but quadratically with
+                                width. The geometric baseline mitigated some of these issues by explicitly modelling the spike as a sequence of discs with circular cross-sections.
+                                owever, its absolute errors remained larger than those of the area baseline. Spikes with a large volume tended to be underestimated and small spikes overestimated, 
+                                a pattern that originated from the training set: the geometric baseline overestimated large spikes during calibration.
+
                             </p>
                         </div>
                     </div>
