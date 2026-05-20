@@ -332,8 +332,8 @@
                                 the area baseline consistently outperformed the geometric baseline across all image counts. A key limitation of the area 
                                 baseline is that it treated all pixels equally, ignoring that spike volume scales linearly with length but quadratically with
                                 width. The geometric baseline mitigated some of these issues by explicitly modelling the spike as a sequence of discs with circular cross-sections.
-                                owever, its absolute errors remained larger than those of the area baseline. Spikes with a large volume tended to be underestimated and small spikes overestimated, 
-                                a pattern that originated from the training set: the geometric baseline overestimated large spikes during calibration.
+                                However, its absolute errors remained larger than those of the area baseline. While spikes may appear roughly axis-symmetric, the spikelets are positioned in an alternating manner along
+                                the main axis. This results in an asymmetrical radius on either side of the main axis, violating the geometric assumptions.
 
                             </p>
                         </div>
@@ -359,11 +359,11 @@
 
                             <p class="figure-extra-text text-box">
                                 Among the neural networks with a fine-tuned backbone, DINOv3 outperformed DINOv2 in most cases. One possible explanation for this pattern is that DINOv3 introduces architectural and training changes designed to excel
-                                at high-level semantic representation learning. hese improvements do not necessarily translate into better performance in fine-grained geometric
+                                at high-level semantic representation learning. These improvements do not necessarily translate into better performance in fine-grained geometric
                                 estimation tasks, such as estimating spike volume when the backbone is fully frozen. However, once fine-tuned, the greater representational capacity of DINOv3
                                 enabled more effective adaptation to task-specific requirements, resulting in superior performance. While ResNet50 generally outperformed ResNet18, both the CNN and the FoMo4Wheat backbones
                                 remained inferior to the fine-tuned DINOv2 and DINOv3 models. The fine-tuned DINOv3-MLP model evaluated on six images achieved the best performance.
-                                As expected, the estimation error decreased with an increasing number of evaluation images. After backbone fine-tuning, MLPs outperformed the LSTMs. 
+                                As expected, the estimation error decreased with an increasing number of evaluation images.
                             </p>
                         </figure>
 
@@ -383,7 +383,7 @@
                             <p class="figure-extra-text text-box">
                                 Although all methods showed improvements with more evaluation images, the performance gains of the baseline methods began to level off beyond two images. 
                                 Across all extreme spike groups, the neural network showed the narrowest interquartile ranges, reflecting reduced error ranges
-                                and improved estimation stability compared to the baseline models 
+                                and improved estimation stability compared to the baseline models. 
 
                             </p>
                         </figure>
