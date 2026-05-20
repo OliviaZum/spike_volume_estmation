@@ -297,7 +297,7 @@
         <figure>
             <img class="overview-img" src="overview.png" alt="Overview of the spike volume estimation pipeline">
             <figcaption>
-                Overview of the proposed pipeline for estimating wheat spike volume from RGB images. Spike RGB images were acquired
+                Figure 1: Overview of the proposed pipeline for estimating wheat spike volume from RGB images. Spike RGB images were acquired
                 indoors and outdoors in the field with a smartphone. 3D point clouds from a structured light scanner were used to extract
                 ground truth volume. The area baseline analyzed the correlation between the number of pixels belonging to the spike
                 and the ground truth volume. The geometric baseline treated the spike as a series of stacked discs with varying 
@@ -321,7 +321,7 @@
                         <figure class="image-card">
                             <img class="result-img1" src="results_baseline.png" alt="Baseline results">
                             <figcaption>
-                                Evaluation metrics of baseline models using six, four, two, and one image(s), respectively.
+                                Figure 2: Evaluation metrics of baseline models using six, four, two, and one image(s), respectively.
                             </figcaption>
                         </figure>
 
@@ -345,7 +345,7 @@
                         <figure class="image-card">
                             <img class="result-img2" src="results_NN.png" alt="Neural network results 1">
                             <figcaption>
-                                Evaluation metrics of neural networks using six, four, two, and one image(s), respectively.
+                                Figure 3: Evaluation metrics of neural networks using six, four, two, and one image(s), respectively.
                             </figcaption>
                         </figure>
 
@@ -354,7 +354,7 @@
                         <figure class="image-card">
                             <img class="result-img3" src="correlation_indoor.png" alt="Neural network results 2">
                             <figcaption>
-                                Correlation between measured and estimated volumes of the fine-tuned DINOv3-MLP evaluated
+                                Figure 4: Correlation between measured and estimated volumes of the fine-tuned DINOv3-MLP evaluated
                                 on one (a) and on six images (b).
                             </figcaption>
 
@@ -378,7 +378,7 @@
                         <figure class="image-card">
                             <img class="result-img4" src="comparison_models.png" alt="Model comparison 1">
                             <figcaption>
-                                Decrease of mean absolute percentage error of the baselines and neural networks based on different
+                                Figure 5: Decrease of mean absolute percentage error of the baselines and neural networks based on different
                                 numbers of evaluation images. 
                             </figcaption>
 
@@ -394,7 +394,7 @@
                         <figure class="image-card">
                             <img class="result-img5" src="results_extreme_groups.png" alt="Model comparison 2">
                             <figcaption>
-                                Boxplot of estimation errors for the baselines and the best-performing neural network of individual
+                                Figure 6: Boxplot of estimation errors for the baselines and the best-performing neural network of individual
                                 test set spikes grouped b measured volume (a), curvature (b), and combinations of length and width (c and d).
                             </figcaption>
                         </figure>
@@ -409,7 +409,7 @@
                     <figure class="image-card">
                         <img class="result-img6" src="results_fine_tuning.png" alt="Field image results 1">
                         <figcaption>
-                            Evaluation metrics of the best-performing single side-view models trained on indoor images, and the same models fine-tuned 
+                            Figure 7: Evaluation metrics of the best-performing single side-view models trained on indoor images, and the same models fine-tuned 
                             on single side-view field images. 
                         </figcaption>
                     </figure>
@@ -417,7 +417,7 @@
                     <figure class="image-card">
                         <img class="result-img7" src="correlation_outdoor.png" alt="Field image results 2">
                         <figcaption>
-                            Correlation between measured and estimated volumes of the DINOv3-MLP evaluated on single side-view field images (a), and the 
+                            Figure 8: Correlation between measured and estimated volumes of the DINOv3-MLP evaluated on single side-view field images (a), and the 
                             DINOv3-MLP model fine-tuned on single side-view field images (b).
                         </figcaption>
                     </figure>
