@@ -321,7 +321,7 @@
                         <figure class="image-card">
                             <img class="result-img1" src="results_baseline.png" alt="Baseline results">
                             <figcaption>
-                                Caption for baseline results.
+                                Evaluation metrics of baseline models using six, four, two, and one image(s), respectively.
                             </figcaption>
                         </figure>
 
@@ -345,7 +345,7 @@
                         <figure class="image-card">
                             <img class="result-img2" src="results_NN.png" alt="Neural network results 1">
                             <figcaption>
-                                Caption for neural network result 1.
+                                Evaluation metrics of neural networks using six, four, two, and one image(s), respectively.
                             </figcaption>
                         </figure>
 
@@ -354,7 +354,8 @@
                         <figure class="image-card">
                             <img class="result-img3" src="correlation_indoor.png" alt="Neural network results 2">
                             <figcaption>
-                                Caption for neural network result 2.
+                                Correlation between measured and estimated volumes of the fine-tuned DINOv3-MLP evaluated
+                                on one (a) and on six images (b).
                             </figcaption>
 
                             <p class="figure-extra-text text-box">
@@ -377,7 +378,8 @@
                         <figure class="image-card">
                             <img class="result-img4" src="comparison_models.png" alt="Model comparison 1">
                             <figcaption>
-                                Caption for model comparison 1.
+                                Decrease of mean absolute percentage error of the baselines and neural networks based on different
+                                numbers of evaluation images. 
                             </figcaption>
 
                             <p class="figure-extra-text text-box">
@@ -392,7 +394,8 @@
                         <figure class="image-card">
                             <img class="result-img5" src="results_extreme_groups.png" alt="Model comparison 2">
                             <figcaption>
-                                Caption for model comparison 2.
+                                Boxplot of estimation errors for the baselines and the best-performing neural network of individual
+                                test set spikes grouped b measured volume (a), curvature (b), and combinations of length and width (c and d).
                             </figcaption>
                         </figure>
                     </div>
@@ -406,14 +409,16 @@
                     <figure class="image-card">
                         <img class="result-img6" src="results_fine_tuning.png" alt="Field image results 1">
                         <figcaption>
-                            Caption for field image result 1.
+                            Evaluation metrics of the best-performing single side-view models trained on indoor images, and the same models fine-tuned 
+                            on single side-view field images. 
                         </figcaption>
                     </figure>
 
                     <figure class="image-card">
                         <img class="result-img7" src="correlation_outdoor.png" alt="Field image results 2">
                         <figcaption>
-                            Caption for field image result 2.
+                            Correlation between measured and estimated volumes of the DINOv3-MLP evaluated on single side-view field images (a), and the 
+                            DINOv3-MLP model fine-tuned on single side-view field images (b).
                         </figcaption>
                     </figure>
                 </div>
